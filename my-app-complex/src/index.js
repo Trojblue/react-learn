@@ -2,21 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 
-
-// class Square extends React.Component {
-  
-//     render() {
-//       return (
-//         <button className="square" onClick={ () => this.props.onClick()}>
-//           {this.props.value}  
-//         </button> 
-//         // setstate: 初始没有state (空白)
-//         // set以后变为 X, 显示出state
-//       );
-//     }
-//   }
-
-
   function Square(props){
     return (
       <button className="square" onClick={props.onClick}>
@@ -25,8 +10,6 @@ import './index.css';
     );
   }
   
-
-
   class Board extends React.Component {
  
     renderSquare(i) {
@@ -85,12 +68,13 @@ import './index.css';
       const current = history[this.state.stepNumber];
       const winner = calculateWinner(current.squares);
 
-      const moves=history.map((step, move) => {
+      const moves=history.map(  (step, move) => {
         const desc = move ? 'Go to move #'+move:'Go to game start';
         return(<li key={move}> 
           <button onClick={() => this.jumpTo(move)}> {desc} </button> 
-        </li>)
-      })
+          </li>)
+      }
+      )
 
       let status;
       if (winner){
@@ -98,7 +82,6 @@ import './index.css';
       }else{
         status = 'Next player:' + (this.state.xIsNext ? 'X':'O');
       }
-
 
       return (
         <div className="game">
