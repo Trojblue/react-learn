@@ -2,6 +2,13 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 
+
+// 没有加上判断输赢的程序, 因为哪部分比较长;
+//具体看这篇 https://zh-hans.reactjs.org/tutorial/tutorial.html
+
+
+
+
 class Square extends React.Component {
   
     render() {
@@ -39,7 +46,6 @@ class Square extends React.Component {
         squares: squares,
         xIsNext: !this.state.xIsNext,
       });
-
     }
   
     render() {
